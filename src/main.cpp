@@ -20,3 +20,16 @@ void setup() {
     analogReadResolution(12);
     Serial.println("LDR Light Intensity Monitoring System (UNO R4 WiFi)");
 }
+void loop() {
+    ldrValue = analogRead(ldrPin);
+
+    Serial.print("LDR Raw Value: ");
+    Serial.println(ldrValue);
+
+    if (ldrValue > threshold) {
+        Serial.println("Bright Environment");
+    } else {
+        Serial.println("Dark Environment");
+    }
+    delay(1000);
+}
