@@ -13,3 +13,10 @@
 const int ldrPin = A0;
 int ldrValue = 0;
 int threshold = 2000;
+
+void setup() {
+    Serial.begin(9600);
+    while (!Serial);
+    analogReadResolution(12);
+    Serial.println("LDR Light Intensity Monitoring System (UNO R4 WiFi)");
+}
